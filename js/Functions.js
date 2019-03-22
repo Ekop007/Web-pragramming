@@ -92,9 +92,11 @@ function DeleteTemp(id) {
     arrUsers[cur].tempsArr.splice(id, 1);
 }
 
-function AddTrans(from, to, cash) {
-    var trans = new Trans(from, to, cash);
-    arrUsers[cur].addTrans(trans);
+function ChangeTemp(from, to, cash) {
+    var temp = arrUsers[cur].tempsArr[localStorage.curTemp];
+    temp.from = from;
+    temp.to = to;
+    temp.cash = cash;
 }
 
 function DeleteTrans(id) {
@@ -121,7 +123,12 @@ function WriteStat(txt) {
 function SaveId(id) {
 
     document.location.curStor = id;
-    GoToPage("Data.html");
+}
+
+
+function SaveTemp(id) {
+
+    document.location.curTemp = id;
 }
 
 function WriteAllStorages(txt) {
@@ -138,6 +145,50 @@ function WriteAllStorages(txt) {
             '            </div>' +
             '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
             '                    <button type="submit" class="btn btn-primary btn-block" onclick="SaveId(String('+i+'))">  Изменить  </button>' +
+            '            </div>' +
+            '         </div>';
+    }
+    txt.push(addText);
+}
+
+function Template(txt) {
+    var temps = arrUsers[cur].tempsArr[localStorage.curTemp];
+    var addText = "";
+    addText += '         <div class="row">' +
+        '            <div class="col" style="text-align: center">' +
+        '               <p style="align-items: center"> Откуда </p>' +
+        '            </div>' +
+        '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+        '               <p style="align-items: center"> Куда </p>' +
+        '            </div>' +
+        '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+        '               <p style="align-items: center"> Сколько </p>' +
+        '            </div>' +
+        '         </div>';
+    if (localStorage.curStorage > -1) {
+        addText += '         <div class="row">' +
+            '            <div class="col" style="text-align: center">' +
+            '               <input name="from" class="form-control" value="'+ temps.name + '" type="" required>' +
+            '            </div>'+
+            '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+            '               <input name="to" class="form-control" value="'+ temps.number + '" type="" required>' +
+            '            </div>' +
+            '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+            '               <input name="cash" class="form-control" value="'+ temps.type + '" type="" required>' +
+            '            </div>' +
+            '         </div>';
+    }
+    else
+    {
+        addText += '         <div class="row">' +
+            '            <div class="col" style="text-align: center">' +
+            '               <input name="from" class="form-control" value="" type="" required>' +
+            '            </div>'+
+            '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+            '               <input name="to" class="form-control" value="" type="" required>' +
+            '            </div>' +
+            '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
+            '               <input name="cash" class="form-control" value="" type="" required>' +
             '            </div>' +
             '         </div>';
     }

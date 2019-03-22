@@ -20,7 +20,7 @@
     <script type="text/javascript">
         localStorage.curStorage = -1;
         LoadArr();
-        function SaveTemp()
+        function SaveStorage()
         {
             var name = document.getElementsByClassName('name')[0].value;
             var number = document.getElementsByClassName('number')[0].value;
@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary btn-block" onclick=" SaveTemp(); GoToPage('Score.html')"> Сохранить </button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick=" SaveStorage(); GoToPage('Score.html')"> Сохранить </button>
                 </div>
             </div>
             <div class="row">
