@@ -124,25 +124,6 @@ function SaveId(id) {
     GoToPage("Data.html");
 }
 
-function WriteAllStorage(txt)
-{
-    var money = arrUsers[cur].moneyStorage;
-    var addText = "";
-    var i = localStorage.t;
-    addText += '         <div class="row" style="border-style: double">' +
-        '            <div class="col" style="text-align: center; background-color: white">' + '<img src="'+money[i].url + '" alt ="" height=150px>' +
-        '            </div>' +
-        '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
-        '                <p style="align-items: center"> Имя: ' + money[i].name + '<br> Номер: ' + money[i].number + '<br> Денег на счету: ' + String(money[i].cash) +
-        '                </p>' +
-        '            </div>' +
-        '            <div class="col" style="align-items: center; justify-content: center; display: flex">' +
-        '                    <button type="submit" class="btn btn-primary btn-block" onclick="SaveId(String('+i+'))">  Изменить  </button>' +
-        '            </div>' +
-        '         </div>';
-    txt.push(addText);
-}
-
 function WriteAllStorages(txt) {
     var money = arrUsers[cur].moneyStorage;
     var addText = "";
