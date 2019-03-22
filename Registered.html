@@ -9,6 +9,15 @@
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="js/Object.js">
+    </script>
+    <script type="text/javascript" src="js/Init.js">
+    </script>
+    <script type="text/javascript" src="js/Functions.js">
+    </script>
+    <script type="text/javascript">
+        LoadArr();
+    </script>
 
     <title>Регистрация</title>
 </head>
@@ -61,7 +70,17 @@
                                 </div> <!-- input-group.// -->
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block"> Регистрация  </button>
+                                <script type="text/javascript">
+                                    function GetValues() {
+                                        var name = document.getElementsByClassName("form-control")[0].value;
+                                        var em = document.getElementsByClassName("form-control")[1].value;
+                                        var pas1 = document.getElementsByClassName("form-control")[2].value;
+                                        var pas2 = document.getElementsByClassName("form-control")[3].value;
+                                        CheckPas(name, pas1, pas2, em);
+                                        GoToPage("Score.html")
+                                    }
+                                </script>
+                                <button type="submit" class="btn btn-primary btn-block" onclick="GetValues()"> Регистрация  </button>
                             </div> <!-- form-group// -->
                             <p class="text-center"> Есть аккаунт? <br><a href="Sing.html" class="btn"> Войти </a></p>
                         </form>

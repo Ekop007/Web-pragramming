@@ -1,0 +1,54 @@
+ul.menu
+{
+    list-style: none;
+    text-align: center;
+    float: left;
+    background: #434855;
+
+}
+
+a.menu
+{
+    text-decoration: none;
+    color: darkblue;
+    padding: 5px;
+    font-size: 18px;
+    display: block;
+    background-color: yellowgreen;
+    width: 200px;
+    text-align: center;
+    border-style: solid;
+    border-color: darkslategrey;
+}
+
+li.menu
+{
+    display: inline-block;
+    margin-right: 1px;
+    color: coral;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+}
+
+body.menu
+{
+    background-color: aquamarine;
+}
+
+.menu
+{
+    background-color: aquamarine;
+}
+
+header {
+    clear: both;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+}
+#header_h {
+    height: 59px;
+    background: #434855;
+    border-bottom: 3px solid #f4f4f5;
+}

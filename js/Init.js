@@ -1,0 +1,2 @@
+var arrUsers = [];
+var cur;
