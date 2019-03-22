@@ -25,25 +25,25 @@ function UsersSpace(username, password, email) {
     };
 }
 
-function MStor(name, type, number, cash, id) {
+function MStor(name, type, number, id) {
     this.name = name;
     this.type = type;
-    this.cash = cash;
+    this.cash = 0;
     this.id = id;
     this.number = number;
     this.url = '';
     this.setUrl = function() {
         if (this.type === 'mir') {
-            this.url = '../Img/mir-card.jpg';
+            this.url = 'Img/mir-card.jpg';
         } else if (this.type === 'visa') {
-            this.url = '../Img/Visa.jpg';
+            this.url = 'Img/Visa.jpg';
         } else if (this.type === 'mastercad') {
-            this.url = '../Img/mastercard.png';
+            this.url = 'Img/mastercard.png';
         } else if (this.type === 'storage') {
-            this.url = '../Img/PUL.jpg';
+            this.url = 'Img/PUL.jpg';
         } else {
             this.type = 'cash';
-            this.url = '../Img/Cash.jpg';
+            this.url = 'Img/Cash.jpg';
         }
     };
     this.addCash = function(cash) {

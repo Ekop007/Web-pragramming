@@ -15,6 +15,8 @@
     </script>
     <script type="text/javascript" src="js/Functions.js">
     </script>
+    <script type="text/javascript" src="js/Exit.js">
+    </script>
     <script type="text/javascript">
         LoadArr();
     </script>
@@ -28,19 +30,27 @@
         </script>
     </div>
 </header>
-
-<br>
 <div class="container">
     <br>
     <div class="container">
-        <form class="form-signin">
-            <div class="row">
-                <div class="col"> <br> <br> <br> </div>
+        <div class="row" style="text-align: center">
+            <div class="col" style="text-align: center">
             </div>
-            <div class="row">
-                <div class="col"></div>
+            <div class="col" style="text-align: center">
+                <h3 style="text-align: center"> Все шаблоны </h3>
             </div>
-        </form>
+            <div class="col">
+                <button type="submit" class="btn btn-primary btn-block" onclick="GoToPage('Data.html')">  Добавить шаблон  </button>
+            </div>
+        </div>
+
+        <div class="form-table">
+            <script type="text/javascript">
+                var txt = [];
+                WriteAllTemp(txt);
+                document.getElementsByClassName('form-table')[0].innerHTML = txt.pop();
+            </script>
+        </div>
     </div>
 </div>
 </body>

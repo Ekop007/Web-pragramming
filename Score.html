@@ -11,12 +11,15 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script type="text/javascript" src="js/Object.js">
     </script>
+    <script type="text/javascript" src="js/Exit.js">
+    </script>
     <script type="text/javascript" src="js/Init.js">
     </script>
     <script type="text/javascript" src="js/Functions.js">
     </script>
     <script type="text/javascript">
         LoadArr();
+        localStorage.curStorage = 0;
     </script>
 
     <title>Список счетов</title>
@@ -32,14 +35,24 @@
 <div class="container">
     <br>
     <div class="container">
-        <form class="form-signin">
-            <div class="row">
-                <div class="col"> <br> <br> <br> </div>
+        <div class="row" style="text-align: center">
+            <div class="col" style="text-align: center">
             </div>
-            <div class="row">
-                <div class="col"></div>
+            <div class="col" style="text-align: center">
+                <h3 style="text-align: center"> Все счета </h3>
             </div>
-        </form>
+            <div class="col">
+                <button type="submit" class="btn btn-primary btn-block" onclick="localStorage.curStorage  = -1; GoToPage('Data.html')">  Добавить счет  </button>
+            </div>
+        </div>
+
+        <div class="form-table">
+            <script type="text/javascript">
+                var txt = [];
+                WriteAllStorages(txt);
+                document.getElementsByClassName('form-table')[0].innerHTML = txt.pop();
+            </script>
+        </div>
     </div>
 </div>
 </body>

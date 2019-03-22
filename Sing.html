@@ -17,6 +17,21 @@
     </script>
     <script type="text/javascript">
         LoadArr();
+        localStorage.t = 0;
+        function GetValues() {
+                var name = document.getElementsByClassName("form-control")[0].value;
+                var pas = document.getElementsByClassName("form-control")[1].value;
+                CheckIn(name, pas);
+                if (localStorage.t === 1) {
+                    GoToPage('Score.html');
+                    document.location.href = 'Score.html';
+                }
+            }
+
+        function Go() {
+            GoToPage('Score.html');
+                document.location.href = 'Score.html';
+        }
     </script>
 
     <title>Вход</title>
@@ -54,14 +69,7 @@
                                 </div> <!-- input-group.// -->
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <script type="text/javascript">
-                                    function GetValues() {
-                                        var name = document.getElementsByClassName("form-control")[0].value;
-                                        var pas = document.getElementsByClassName("form-control")[1].value;
-                                        CheckIn(name, pas);
-                                    }
-                                </script>
-                                <button type="submit" class="btn btn-primary btn-block" onclick="GetValues()"> Войти  </button>
+                                <button type="submit" class="btn btn-primary btn-block" onclick="GetValues(); Go()"> Войти  </button>
                             </div> <!-- form-group// -->
                             <p class="text-center"><a href="#" class="btn">Забыли пароль?</a></p>
                             <p class="text-center"><a href="Registered.html" class="btn">Регистрация</a></p>
