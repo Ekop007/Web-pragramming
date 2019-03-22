@@ -30,23 +30,29 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3> Таблица расходов </h3>
+        <div class="row" style="text-align: center">
+            <div class="col" style="text-align: center">
+                <h3 style="text-align: center"> Таблица расходов </h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row" style="text-align: center">
+            <div class="col" style="border-style: outset ;border-right: #434855; background-color: cadetblue">
                 <h4> Откуда </h4>
             </div>
-            <div class="col">
+            <div class="col" style="border-style: outset ;border-right: #434855; border-left: #434855; background-color: cadetblue">
                 <h4> Куда </h4>
             </div>
-            <div class="col">
+            <div class="col" style="border-style: outset ;border-left: #434855; background-color: cadetblue">
                 <h4> Сколько </h4>
             </div>
         </div>
-
+        <div class="table-form">
+            <script type="text/javascript">
+                var txt = [];
+                WriteStat(txt);
+                document.getElementsByClassName('table-form')[0].innerHTML = txt.pop();
+            </script>
+        </div>
     </div>
 </body>
 </html>

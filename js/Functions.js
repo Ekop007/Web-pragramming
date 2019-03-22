@@ -71,7 +71,6 @@ function AddTempl(from, to, cash) {
     arrUsers[cur].addTemp(tem);
 }
 
-
 function DeleteTemp(id) {
     arrUsers[cur].tempsArr.splice(id, 1);
 }
@@ -81,7 +80,22 @@ function AddTrans(from, to, cash) {
     arrUsers[cur].addTrans(trans);
 }
 
-
 function DeleteTrans(id) {
     arrUsers[cur].trans.splice(id, 1);
+}
+
+function WriteStat(txt) {
+    var money = arrUsers[cur].moneyStorage;
+    var addText = "";
+    for (var i = 0; i < arrUsers[cur].trans.length; ++i)
+    {
+        var tran = arrUsers[cur].trans[i];
+        addText += '         <div class="row">' +
+                   '            <div class="col">' + '<img src="'+money[tran.from].url + '" alt = "">' +
+                   '                <h5>' + money[tran.from].name + ' ' + money[tran.from].number +
+                   '                </h5>' +
+                   '            </div>' +
+                   '         </div>';
+    }
+    txt.push(addText);
 }

@@ -52,3 +52,10 @@ header {
     background: #434855;
     border-bottom: 3px solid #f4f4f5;
 }
+
+div.table-form
+{
+    background-color: #f4f4f5;
+    border: inherit;
+    border-radius: 5px;
+}
